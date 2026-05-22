@@ -135,7 +135,7 @@ getSecureHeaders()  // Returns safe HTTP headers
 ### No Hard-coded Secrets
 All sensitive values via `.env`:
 - Cesium Ion token
-- CARTO API key
+- Philadelphia Open Data endpoint (no key required)
 - Third-party API endpoints
 
 ## 📦 Cesium Integration

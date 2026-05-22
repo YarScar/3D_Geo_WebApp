@@ -14,7 +14,7 @@ A complete, industry-standard 3D geospatial web application featuring:
 - **Interactive Timeline** - 2015-2024 year scrubber with smooth transitions
 - **Dual View Modes** - Absolute scores & velocity differential analysis
 - **Live Scorecards** - Click neighborhoods for detailed metrics
-- **Real-time Data** - CARTO integration for property transactions
+- **Real-time Data** - Philadelphia Open Data integration for property transactions
 
 ---
 

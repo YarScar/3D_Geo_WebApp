@@ -1,7 +1,7 @@
 # Development Setup & Getting Started
 
 ## Prerequisites
-- Node.js 16+ 
+- Node.js 18+ 
 - npm or yarn
 
 ## Installation
@@ -15,8 +15,7 @@ cp .env.example .env
 
 # Add your API keys to .env
 # - VITE_CESIUM_ION_TOKEN: Get from https://cesium.com/ion/tokens
-# - VITE_CARTO_API_KEY: Get from https://carto.com/
-# - VITE_PHILLY_DATA_API: Philadelphia data API endpoint
+# - VITE_PHILLY_DATA_API: Philadelphia data API endpoint (no key required)
 ```
 
 ## Development
@@ -90,8 +89,8 @@ data/
 ### Cesium Ion
 Provides satellite imagery and terrain for the 3D map. Get a token at https://cesium.com/ion/tokens
 
-### CARTO
-Real-time property transaction queries and operational data. Requires API key and account.
+### Philadelphia Open Data
+Municipal datasets via data.phila.gov API (no API key required)
 
 ### Philadelphia Open Data
 Municipal datasets via data.phila.gov API

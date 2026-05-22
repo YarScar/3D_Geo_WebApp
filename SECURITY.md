@@ -45,9 +45,9 @@ Strict-Transport-Security: max-age=31536000; includeSubDomains
 
 ## Third-Party Services
 
-- **Cesium Ion**: Requires API token (secure in .env)
-- **CARTO**: Requires API key (secure in .env)
-- **Bing Maps**: Optional, secure in .env if used
+-- **Cesium Ion**: Requires API token (secure in .env)
+-- **Philadelphia Open Data**: Public API (no key required)
+-- **Bing Maps**: Optional, secure in .env if used
 
 ## Compliance
 

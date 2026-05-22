@@ -20,6 +20,85 @@ body {
   overflow: hidden;
 }
 
+/* App layout */
+#app-root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.app-header {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background: linear-gradient(90deg, #0b0b0b, #121212);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.app-main {
+  display: flex;
+  flex: 1 1 auto;
+  min-height: 0; /* allow children to scroll */
+}
+
+.left-panel {
+  width: 340px;
+  background: rgba(10,10,10,0.6);
+  border-right: 1px solid rgba(255,255,255,0.03);
+  padding: 12px;
+  overflow-y: auto;
+}
+
+.viewer-container {
+  flex: 1 1 auto;
+  position: relative;
+}
+
+.timeline-footer {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 24px;
+}
+
+.right-panel {
+  width: 360px;
+  background: rgba(12,12,12,0.6);
+  border-left: 1px solid rgba(255,255,255,0.03);
+  padding: 12px;
+  overflow-y: auto;
+}
+
+/* Loader overlay */
+.loader-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 12px;
+  background: rgba(2,2,2,0.6);
+  z-index: 9999;
+  color: #fff;
+  pointer-events: none;
+}
+
+.loader-spinner {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 6px solid rgba(255,255,255,0.12);
+  border-top-color: #ff6b35;
+  animation: spin 1s linear infinite;
+}
+
+.loader-text { font-size: 14px; color: rgba(255,255,255,0.9); }
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
 button {
   font-family: inherit;
 }
@@ -34,7 +113,9 @@ input {
 }
 
 .cesium-viewer-bottom {
-  display: none !important;
+  /* Keep Cesium credits and timeline visible for attribution and context */
+  display: block !important;
+  color: rgba(255,255,255,0.7);
 }
 
 .cesium-viewer-cesiumWidgetContainer {

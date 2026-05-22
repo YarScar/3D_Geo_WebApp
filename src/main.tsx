@@ -3,6 +3,11 @@ import ReactDOM from 'react-dom/client'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import App from './App.tsx'
 import './styles/index.css'
+// Import Cesium widgets CSS for UI controls/icons
+import 'cesium/Build/Cesium/Widgets/widgets.css'
+
+// Ensure Cesium can find its static assets (Workers, Widgets images)
+;(window as any).CESIUM_BASE_URL = '/cesium'
 
 const queryClient = new QueryClient({
   defaultOptions: {

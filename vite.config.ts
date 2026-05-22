@@ -1,10 +1,34 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import cesium from 'vite-plugin-cesium'
+import path from 'path'
+import { fileURLToPath } from 'url'
+
+// __dirname for ESM
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), cesium()],
+  plugins: [react()],
+  optimizeDeps: {
+    include: ['@zip.js/zip.js'],
+  },
+  resolve: {
+    alias: [
+      // Cesium expects a subpath that some versions of @zip.js do not export.
+      // Redirect the import used by Cesium to the dist file that exists in node_modules.
+      {
+        find: '@zip.js/zip.js/lib/zip-no-worker.js',
+        // map to the bundled dist file which provides a no-worker entry
+        replacement: path.resolve(__dirname, 'node_modules/@zip.js/zip.js/dist/zip.js'),
+      },
+      {
+        find: '@zip.js/zip.js',
+        // main entry (index.js) is at package root
+        replacement: path.resolve(__dirname, 'node_modules/@zip.js/zip.js/index.js'),
+      },
+    ],
+  },
   server: {
     port: 5173,
     open: true,

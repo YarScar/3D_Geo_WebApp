@@ -17,7 +17,7 @@ const COLOR_RAMP_VELOCITY = [
   { value: 100, color: Cesium.Color.fromCssColorString('#cc2936') },   // Vibrant crimson
 ]
 
-function interpolateColor(value: number, ramp: typeof COLOR_RAMP_ABSOLUTE): Cesium.Color {
+export function interpolateColor(value: number, ramp: typeof COLOR_RAMP_ABSOLUTE): Cesium.Color {
   let lower = ramp[0]
   let upper = ramp[ramp.length - 1]
 
@@ -33,7 +33,14 @@ function interpolateColor(value: number, ramp: typeof COLOR_RAMP_ABSOLUTE): Cesi
   const range = upper.value - lower.value
   const t = range === 0 ? 0 : (value - lower.value) / range
 
-  return Cesium.Color.interpolate(lower.color, upper.color, t)!
+  // Manually interpolate RGBA channels to avoid relying on non-portable Cesium helpers
+  const lerp = (a: number, b: number, t: number) => a + (b - a) * t
+  const r = lerp(lower.color.red, upper.color.red, t)
+  const g = lerp(lower.color.green, upper.color.green, t)
+  const b = lerp(lower.color.blue, upper.color.blue, t)
+  const a = lerp(lower.color.alpha ?? 1, upper.color.alpha ?? 1, t)
+
+  return new Cesium.Color(r, g, b, a)
 }
 
 function getScoreForYear(neighborhood: NeighborhoodData, year: number): number {
