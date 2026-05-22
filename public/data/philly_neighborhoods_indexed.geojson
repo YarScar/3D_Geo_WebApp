@@ -1,0 +1,89 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Center City",
+        "score2015": 45,
+        "score2016": 48,
+        "score2017": 51,
+        "score2018": 54,
+        "score2019": 57,
+        "score2020": 58,
+        "score2021": 62,
+        "score2022": 65,
+        "score2023": 68,
+        "score2024": 72
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-75.1652, 39.9526],
+            [-75.1552, 39.9526],
+            [-75.1552, 39.9626],
+            [-75.1652, 39.9626],
+            [-75.1652, 39.9526]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "University City",
+        "score2015": 38,
+        "score2016": 40,
+        "score2017": 43,
+        "score2018": 46,
+        "score2019": 49,
+        "score2020": 50,
+        "score2021": 54,
+        "score2022": 58,
+        "score2023": 62,
+        "score2024": 66
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-75.2352, 39.9926],
+            [-75.2252, 39.9926],
+            [-75.2252, 40.0026],
+            [-75.2352, 40.0026],
+            [-75.2352, 39.9926]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Kensington",
+        "score2015": 62,
+        "score2016": 61,
+        "score2017": 60,
+        "score2018": 59,
+        "score2019": 58,
+        "score2020": 57,
+        "score2021": 56,
+        "score2022": 55,
+        "score2023": 54,
+        "score2024": 52
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-75.0952, 39.9926],
+            [-75.0852, 39.9926],
+            [-75.0852, 40.0026],
+            [-75.0952, 40.0026],
+            [-75.0952, 39.9926]
+          ]
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+.dashboard {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.dashboard-header {
+  pointer-events: auto;
+  margin-bottom: 20px;
+}
+
+.dashboard-header h1 {
+  color: white;
+  font-size: 24px;
+  margin: 0;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.dashboard-controls {
+  pointer-events: auto;
+  position: absolute;
+  top: 80px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 15px 20px;
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+}
+
+.dashboard-footer {
+  pointer-events: auto;
+  margin-top: auto;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+}
